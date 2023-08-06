@@ -1,0 +1,213 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+
+# Use custom format
+format = """
+╓─╥─$battery$fill
+║ ╟─[ $username 󰇅 $hostname $directory$package$java$python$git_branch$cmd_duration](#c3c7d1)
+║ ╟─$time─╖
+╙─╨──────────╨─ """
+
+right_format = """$all"""
+
+[fill]
+style = 'fg:#c3c7d1'
+symbol = '─'
+
+# Username settings
+[username]
+show_always = true
+style_root = " bold red"
+style_user = " bold #f67e7d"
+format = "[$user]($style)"
+disabled = false
+
+# Hostname settings
+[hostname]
+ssh_only = false
+format = "[$hostname]( bold #e1dd8f)"
+trim_at = ".companyname.com"
+disabled = false
+
+[character]
+success_symbol = ""
+# vicmd_symbol = ""
+error_symbol = ""
+
+[directory]
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+style = "#7cb7ff"
+format = " [$path$read_only]($style) "
+
+[cmd_duration]
+min_time = 50
+show_milliseconds = true
+format = "[ $duration](#00c1e4)"
+
+[jobs]
+symbol = " "
+
+# harware config
+[battery]
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+discharging_symbol = "󱟟 "
+charging_symbol = "󰂄󱐋"
+full_symbol = "󰁹 "
+
+[[battery.display]]
+threshold = 10
+style = "bold fg:red"
+charging_symbol = "󰁺󱐋"
+discharging_symbol = "󰂃 "
+
+[[battery.display]]
+threshold = 20
+style = "fg:#ff8800"
+charging_symbol = "󰁻󱐋"
+discharging_symbol = "󰁻 "
+
+[[battery.display]]
+threshold = 30
+style = "fg:#ff8800"
+charging_symbol = "󰁼󱐋"
+discharging_symbol = "󰁼 "
+
+[[battery.display]]
+threshold = 40
+style = "fg:yellow"
+charging_symbol = "󰁽󱐋"
+discharging_symbol = "󰁽 "
+
+[[battery.display]]
+threshold = 50
+style = "fg:yellow"
+charging_symbol = "󰁾󱐋"
+discharging_symbol = "󰁾 "
+
+[[battery.display]]
+threshold = 60
+style = "fg:green"
+charging_symbol = "󰁿󱐋"
+discharging_symbol = "󰁿 "
+
+[[battery.display]]
+threshold = 70
+style = "fg:green"
+charging_symbol = "󰂀󱐋"
+discharging_symbol = "󰂀 "
+
+[[battery.display]]
+threshold = 80
+style = "fg:green"
+charging_symbol = "󰂁󱐋"
+discharging_symbol = "󰂁 "
+
+[[battery.display]]
+threshold = 90
+style = "fg:green"
+charging_symbol = "󰂂󱐋"
+discharging_symbol = "󰂂 "
+
+[[battery.display]]
+threshold = 100
+style = "fg:green"
+charging_symbol = "󰁹󱐋"
+discharging_symbol = "󰁹 "
+
+[memory_usage]
+disabled = false
+symbol = " "
+
+[time]
+disabled = false
+style = "#00c1e4"
+format = "[$time](fg:#c3c7d1)"
+
+# [status]
+# disabled = false
+# style = "red"
+# symbol = "\\(╯°□°）╯︵ ┻━┻ "
+# format = "\b[](bg:$style fg:#4169e1)[$symbol$status](bg:$style)[](fg:$style)"
+
+# VCS
+[git_branch]
+symbol = " "
+style = "#f05133"
+format = "$symbol[$branch](fg:#cae7b9) "
+
+[git_commit]
+style = "#f05133"
+format = "\b\bﰖ [ $hash](fg:#cae7b9) "
+
+[git_state]
+am = "APPLYING-MAILBOX"
+am_or_rebase = "APPLYING-MAILBOX/REBASE"
+style = "#f05133"
+format = "\b\b[\\($state( $progress_current/$progress_total)\\)](fg:#cae7b9) "
+
+[git_status]
+style = "#f05133"
+format = "($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind\b )"
+conflicted = "[ ](fg:88)[   ${count} ](fg:#cae7b9)[ ](fg:88)"
+staged = "[M$count ](fg:green)"
+modified = "[M${count} ](fg:red)"
+renamed = "[R${count} ](fg:208)"
+deleted = "[ ${count} ](fg:208)"
+untracked = "[?${count} ](fg:red)"
+stashed = " ${count} "
+ahead = "[ ${count} ](fg:purple)"
+behind = "[ ${count} ](fg:yellow)"
+diverged = "[](fg:88)[  נּ ](fg:#cae7b9)[ ${ahead_count} ](fg:purple)[ ${behind_count} ](fg:yellow)[ ](fg:88)"
+
+[shlvl]
+disabled = false
+style = "fg:bright-blue"
+symbol = " "
+
+# [env_var]
+# variable = "GAMBLE_TEST_COMMAND"
+# format = "gambling with [$env_value]($style)"
+
+# techno specific
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[java]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = "󰎙 "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+style = "fg:#ffa07a"
